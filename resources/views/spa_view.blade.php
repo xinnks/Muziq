@@ -39,11 +39,14 @@
             height: 100vh;
             margin: 0;
         }
+        [v-cloak]{
+            display: none;
+        }
     </style>
 
 </head>
 <body>
-<div id="app">
+<div id="app" v-cloak>
     <start></start>
 </div>
 <!-- built files will be auto injected -->

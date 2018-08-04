@@ -18,4 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('getallmusic','FetchController@getAllMusic');
+Route::get('getallartists','FetchController@getAllArtists');
+Route::get('getartistmusic/{artist_ui}','FetchController@getArtistMusic');
+Route::get('getallalbums','FetchController@getAllAlbums');
+Route::get('getalbummusic/{album_ui}','FetchController@getAlbumMusic');
+Route::get('getallplaylists','FetchController@getAllPlaylists');
+Route::get('getplaylistmusic/{playlist_ui}','FetchController@getPlaylistMusic');
 Route::post('add_music_file', 'Auth\Add@uploadMusicFile');

@@ -93,7 +93,7 @@
                             <div uk-form-custom="target: > * > span:first-child">
                                 <select type="email" class="uk-input{{ $errors->has('album_id') ? ' uk-form-danger' : '' }}" name="album_id" value="{{ old('album_id') }}" >
                                     @if($albums)
-                                        <option value="" disabled>Please select Album</option>
+                                        <option value="">Please select Album</option>
                                         @foreach($albums as $album)
                                             <option value="{{$album->id}}">{{$album->name}}</option>
                                         @endforeach

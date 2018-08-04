@@ -24,7 +24,7 @@ class SongInfoRequest extends FormRequest
     public function rules()
     {
         return [
-            'audio_file' => 'max:10000|required',
+            'audio_file' => 'max:50000|required',
             'song_title' => 'string|required',
             'artist_id' => 'integer|required',
             'album_id' => 'integer',

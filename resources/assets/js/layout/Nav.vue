@@ -11,13 +11,16 @@
                     </a>
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a href="#">Playlists</a>
+                            <router-link to="/">Home</router-link>
                         </li>
                         <li>
-                            <a href="#">Artists</a>
+                            <router-link to="/artists">Artists</router-link>
                         </li>
                         <li>
-                            <a href="#">Albums</a>
+                            <router-link to="/albums">Albums</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/playlists">Playlists</router-link>
                         </li>
                     </ul>
                 </div>
