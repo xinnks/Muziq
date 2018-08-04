@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CoverArt extends Model
 {
-    //
+    protected $fillable = ['photo'];
 }

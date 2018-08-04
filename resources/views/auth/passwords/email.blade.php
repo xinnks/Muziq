@@ -1,47 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <div class="uk-section">
+        <div class="uk-container uk-container-center">
 
-                <div class="card-body">
+            <div class="uk-width-1-2@m uk-align-center">
+
+                <div class="uk-padding uk-box-shadow-large">
+
+                    <h2>Reset Password</h2>
+
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
+                        <div class="uk-alert-primary" uk-alert>
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}" aria-label="{{ __('Reset Password') }}">
-                        @csrf
+                    <form class="uk-form-stacked" role="form" method="POST" action="{{ route('password.email') }}">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        {{ csrf_field() }}
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                        <div>
+                            <label class="uk-form-label">Email Address</label>
+                            <input id="email" type="email" class="uk-input{{ $errors->has('email') ? ' uk-form-danger' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            @if ($errors->has('email'))
+                                <div class="uk-alert-danger" uk-alert>
+                                    {{ $errors->first('email') }}
+                                </div>
+                            @endif
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
+                        <div class="uk-margin">
+                            <button class="uk-button uk-button-primary" type="submit" name="button">Send Password Reset Link</button>
                         </div>
+
                     </form>
+
                 </div>
             </div>
+
         </div>
     </div>
-</div>
 @endsection

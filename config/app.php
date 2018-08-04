@@ -160,6 +160,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // UIKit preset
+        LaravelFrontendPresets\UIKit3Preset\UIKit3PresetServiceProvider::class
+
     ],
 
     /*

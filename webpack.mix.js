@@ -12,4 +12,6 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js(['node_modules/axios/dist/axios.js','node_modules/vue/dist/vue.js'], 'public/js/admin.js')
+    .js('resources/assets/js/muziq.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
